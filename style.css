@@ -80,9 +80,28 @@ textarea{
    
 }
 footer{
-
-    text-align: center;
-    color: gray;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(157, 168, 179);
     margin-top: 30px;
-    width: 150px;
+    
+}
+button{
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(30, 3, 139);
+    transition: all 0.3s ease;
+}
+a{
+    font-size: 12pt;
+    color: rgb(227, 231, 235);
+    text-decoration: none;
+    
+}
+button:hover{
+    margin: 8px;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px 1px rgb(92, 90, 90);
 }
