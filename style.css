@@ -1,16 +1,17 @@
 body{
-    background-color: rgb(10, 1, 58);
+    background-color: rgb(0, 0, 0);
     margin: 0;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .container{
     display: flex;
     flex-wrap: wrap;
     border-style: outset;
-    border-color: black;
+    border-color: rgb(95, 103, 126);
     border-width: 5px;
     padding: 14px;
     border-radius: 10px;
@@ -32,7 +33,7 @@ textarea{
     margin-bottom: 30px;
     width: 247px;
     height: 40px;
-    border-color: rgb(58, 52, 52);
+    border-color: rgb(63, 68, 83);
     border-width: 4px;
     border-style:inset;
 }
@@ -48,13 +49,14 @@ textarea{
 }
 .botao-comando{
     border-width: 3px;
-    border-color: rgb(129, 129, 4);
+
+    border-color: rgb(129, 129, 9);
     border-style:outset;
     border-radius: 4px;
     background-color: rgb(230, 230, 11);
     font-weight: 600;
-    font-size: 12pt;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    font-family:Arial, Helvetica, sans-serif;
     width: 60px;
     height: 40px;
     margin-left: 5px;
@@ -64,7 +66,7 @@ textarea{
     background-color: rgb(149, 151, 5);
 }
 #somar{
-    height: 90px; background-color: aqua; border-color: rgb(45, 177, 182) ;
+    height: 90px; background-color: aqua; border-color: rgb(7, 119, 119) ;
 }
 #somar:active{
     background-color: rgb(7, 119, 119);
@@ -76,4 +78,11 @@ textarea{
     width: 60px;
     height: 240px;
    
+}
+footer{
+
+    text-align: center;
+    color: gray;
+    margin-top: 30px;
+    width: 150px;
 }
