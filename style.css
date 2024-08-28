@@ -1,4 +1,5 @@
 body{
+    background-color: rgb(10, 1, 58);
     margin: 0;
     height: 100vh;
     display: flex;
@@ -18,6 +19,7 @@ body{
     height: 340px;
 }
 textarea{
+    overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     color: rgb(24, 23, 23);

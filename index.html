@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <textarea name="resultado" id="iresultado" cols="1" rows="1" maxlength="13" ></textarea>
+        <textarea name="resultado" id="iresultado" maxlength="2" readonly ></textarea>
         <div class="botoes">
             
-                <input type="button" value="OFF" class="botao-comando" id="off">
-                <input type="button" value="√" class="botao-comando">
+                <input type="button" value="ON" class="botao-comando" id="off">
+                <input type="button" value="√" class="botao-comando" id="raiz">
                 <input type="button" value="%" class="botao-comando" id="porcen">
                 <input type="button" value="7" class="botao-comando" id="7">
                 <input type="button" value="8" class="botao-comando" id="8">
@@ -232,8 +232,30 @@
                 n1int = Number(n1)
             }
             else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
                 n2int = Number(n2)
-                n1int = n1int+n2int
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
+            }
             }
             n1 = ''
             n2 = ''
@@ -268,12 +290,53 @@
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
             }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
+            }
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = '-'
+            })
+            //subtrair
+            document.getElementById('raiz').addEventListener('click',function(){
+            if (qual <2){
+                n1int = Number(n1)
+            }
+            else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
+            }
+            }
+            n1 = ''
+            n2 = ''
+            qual = 2
+            
+            operacao = 'r'
             })
             //multiplicar
             document.getElementById('multi').addEventListener('click',function(){
@@ -300,6 +363,10 @@
             if (operacao == '%'){
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
+            }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
             }
             }
             n1 = ''
@@ -334,6 +401,10 @@
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
             }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
+            }
             }
             n1 = ''
             n2 = ''
@@ -367,6 +438,10 @@
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
             }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
+            }
             }
             n1 = ''
             n2 = ''
@@ -395,6 +470,10 @@
             if (operacao == '%'){
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
+            }
+            if (operacao == 'r'){
+                n2int = Number(n2)
+                n1int = Math.sqrt(n1int)
             }
             document.getElementById('iresultado').value = n1int 
             operacao = ''
