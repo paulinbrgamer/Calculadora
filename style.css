@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    border-style: outset;
+    border-color: black;
+    border-width: 5px;
+    padding: 14px;
+    border-radius: 10px;
+    background-color: rgb(20, 21, 24);
+    width: 260px;
+    height: 340px;
+}
+textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgb(24, 23, 23);
+    background-color: rgb(161, 189, 173);
+    border-radius: 5px;
+    text-align: end;
+    font-size: 26pt;
+    outline: none;
+    resize: none;
+    margin-bottom: 30px;
+    width: 247px;
+    height: 40px;
+    border-color: rgb(58, 52, 52);
+    border-width: 4px;
+    border-style:inset;
+}
+
+.botoes{
+    width: 200px;
+    height: 240px;
+   
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+   
+}
+.botao-comando{
+    border-width: 3px;
+    border-color: rgb(129, 129, 4);
+    border-style:outset;
+    border-radius: 4px;
+    background-color: rgb(230, 230, 11);
+    font-weight: 600;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 60px;
+    height: 40px;
+    margin-left: 5px;
+    transition: all 0.1s ease;
+}
+.botao-comando:active{
+    background-color: rgb(149, 151, 5);
+}
+#somar{
+    height: 90px; background-color: aqua; border-color: rgb(45, 177, 182) ;
+}
+#somar:active{
+    background-color: rgb(7, 119, 119);
+}
+.botoes-opcao{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 60px;
+    height: 240px;
+   
+}

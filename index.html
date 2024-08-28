@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <textarea name="resultado" id="iresultado" cols="1" rows="1" maxlength="13" ></textarea>
+        <div class="botoes">
+            
+                <input type="button" value="OFF" class="botao-comando">
+                <input type="button" value="√" class="botao-comando">
+                <input type="button" value="%" class="botao-comando">
+                <input type="button" value="7" class="botao-comando" id="7">
+                <input type="button" value="8" class="botao-comando" id="8">
+                <input type="button" value="9" class="botao-comando"id="9">
+                <input type="button" value="4" class="botao-comando"id="4">
+                <input type="button" value="5" class="botao-comando"id="5">
+                <input type="button" value="6" class="botao-comando"id="6">
+                <input type="button" value="1" class="botao-comando"id="1">
+                <input type="button" value="2" class="botao-comando"id="2">
+                <input type="button" value="3" class="botao-comando"id="3">
+                <input type="button" value="." class="botao-comando"id=".">
+                <input type="button" value="0" class="botao-comando"id="0">
+                <input type="button" value="=" class="botao-comando"id="total">
+        </div>
+        <div class="botoes-opcao">
+            <input type="button" value="÷" class="botao-comando">
+            <input type="button" value="x" class="botao-comando">
+            <input type="button" value="−" class="botao-comando">
+            <input type="button" value="+" class="botao-comando"  id="somar">
+            
+        </div>
+        
+        
+    </div>
+    <script>
+       var n1 = '';
+       var n1int ;
+       var n2 = '';
+       var n2int ;
+       var qual = 1
+        var operacao;
+
+        document.getElementById('1').addEventListener('click',function(){
+           
+            if (qual == 1){ 
+                n1 = n1+'1'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                 n2 = n2+'1'
+                document.getElementById('iresultado').value =  n2
+            }
+        })
+        document.getElementById('2').addEventListener('click',function(){
+            
+            if (qual == 1){
+                n1 = n1+'2'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'2'
+                document.getElementById('iresultado').value =  n2
+            }
+        })
+        //função de somar
+        document.getElementById('somar').addEventListener('click',function(){
+            n1int = Number(n1)
+            qual = 2
+            document.getElementById('iresultado').value =  ''
+        
+        })
+        
+        
+    </script>
+</body>
+</html>
