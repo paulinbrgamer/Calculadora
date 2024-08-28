@@ -11,7 +11,7 @@
         <textarea name="resultado" id="iresultado" cols="1" rows="1" maxlength="13" ></textarea>
         <div class="botoes">
             
-                <input type="button" value="OFF" class="botao-comando">
+                <input type="button" value="OFF" class="botao-comando" id="off">
                 <input type="button" value="√" class="botao-comando">
                 <input type="button" value="%" class="botao-comando" id="porcen">
                 <input type="button" value="7" class="botao-comando" id="7">
@@ -38,15 +38,19 @@
         
     </div>
     <script>
-       var n1 = '';
-       var n1int;
-       var n2 = '';
-       var n2int;
-       var qual = 1
-       
-        var operacao = '';
-
-        document.getElementById('1').addEventListener('click',function(){
+        
+        var ligado;
+        document.getElementById('off').addEventListener('click',function(){
+            document.getElementById('iresultado').value = ''
+            var ligado = true
+            if(ligado == true){
+            var n1 = '';
+            var n1int;
+            var n2 = '';
+            var n2int;
+            var qual = 1
+            var operacao = '';
+            document.getElementById('1').addEventListener('click',function(){
             if (operacao == ''){
                 qual = 1;
             }
@@ -61,8 +65,8 @@
                  n2 = n2+'1'
                 document.getElementById('iresultado').value =  n2
             }
-        })
-        document.getElementById('0').addEventListener('click',function(){
+            })
+            document.getElementById('0').addEventListener('click',function(){
             if (operacao == ''){
                 qual = 1;
             }
@@ -77,8 +81,8 @@
                 n2 = n2+'0'
                document.getElementById('iresultado').value =  n2
            }
-       })
-        document.getElementById('2').addEventListener('click',function(){
+            })
+            document.getElementById('2').addEventListener('click',function(){
             if (operacao == ''){
                 qual = 1;
             }
@@ -93,8 +97,8 @@
                 n2 = n2+'2'
                 document.getElementById('iresultado').value =  n2
             }
-        })
-        document.getElementById('3').addEventListener('click',function(){
+            })
+            document.getElementById('3').addEventListener('click',function(){
             if (operacao == ''){
                 qual = 1;
             }
@@ -109,8 +113,8 @@
                 n2 = n2+'3'
                 document.getElementById('iresultado').value =  n2
             }
-        })
-        document.getElementById('4').addEventListener('click',function(){
+            })
+            document.getElementById('4').addEventListener('click',function(){
             if (operacao == ''){
                 qual = 1;
             }
@@ -125,93 +129,282 @@
                 n2 = n2+'4'
                 document.getElementById('iresultado').value =  n2
             }
-        })
-        //função de somar
-        document.getElementById('somar').addEventListener('click',function(){
+            })
+            document.getElementById('5').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'5'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'5'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            document.getElementById('6').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'6'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'6'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            document.getElementById('7').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'7'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'7'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            document.getElementById('8').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'8'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'8'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            document.getElementById('9').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'9'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'9'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            document.getElementById('.').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+            if (qual == 1){
+                n1 = n1+'.'
+                document.getElementById('iresultado').value =  n1
+            }
+            else{
+                n2 = n2+'.'
+                document.getElementById('iresultado').value =  n2
+            }
+            })
+            //função de somar
+            document.getElementById('somar').addEventListener('click',function(){
             if (qual <2){
                 n1int = Number(n1)
+            }
+            else{
+                n2int = Number(n2)
+                n1int = n1int+n2int
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = '+'
-        })
-        //subtrair
-        document.getElementById('subtrair').addEventListener('click',function(){
+            })
+
+            //subtrair
+            document.getElementById('subtrair').addEventListener('click',function(){
             if (qual <2){
                 n1int = Number(n1)
+            }
+            else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = '-'
-        })
-        //multiplicar
-        document.getElementById('multi').addEventListener('click',function(){
+            })
+            //multiplicar
+            document.getElementById('multi').addEventListener('click',function(){
             if (qual <2){
                 n1int = Number(n1)
+            }
+            else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = 'x'
-        })
-        //dividir
-        document.getElementById('divi').addEventListener('click',function(){
+            })
+            //dividir
+            document.getElementById('divi').addEventListener('click',function(){
             if (qual <2){
                 n1int = Number(n1)
+            }
+            else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = '/'
-        })
-        //porcentagem
-        document.getElementById('porcen').addEventListener('click',function(){
+            })
+            //porcentagem
+            document.getElementById('porcen').addEventListener('click',function(){
             if (qual <2){
                 n1int = Number(n1)
+            }
+            else{
+                if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+            }
             }
             n1 = ''
             n2 = ''
             qual = 2
             
             operacao = '%'
-        })
-        //verificar resultado
-        document.getElementById('total').addEventListener('click',function(){
+            })
+            //verificar resultado
+            document.getElementById('total').addEventListener('click',function (){
             if (operacao == '+'){
                n2int = Number(n2)
             n1int = n1int+n2int
-            console.log(n1int)
-            console.log(n2int)
             }
             if (operacao == '-'){
                 n2int = Number(n2)
                 n1int = n1int-n2int
-                console.log(n1int)
             }
             if (operacao == 'x'){
                 n2int = Number(n2)
                 n1int = n1int*n2int
-                console.log(n1int)
             }
             if (operacao == '/'){
                 n2int = Number(n2)
                 n1int = n1int/n2int
-                console.log(n1int)
             }
             if (operacao == '%'){
                 n2int = Number(n2)
                 n1int = (n2int*n1int)/100
-                console.log(n1int)
             }
             document.getElementById('iresultado').value = n1int 
             operacao = ''
+            })
+        }
+        
         })
+
+        
+        
         
     </script>
 </body>
