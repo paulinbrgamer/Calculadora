@@ -13,7 +13,7 @@
             
                 <input type="button" value="OFF" class="botao-comando">
                 <input type="button" value="√" class="botao-comando">
-                <input type="button" value="%" class="botao-comando">
+                <input type="button" value="%" class="botao-comando" id="porcen">
                 <input type="button" value="7" class="botao-comando" id="7">
                 <input type="button" value="8" class="botao-comando" id="8">
                 <input type="button" value="9" class="botao-comando"id="9">
@@ -28,9 +28,9 @@
                 <input type="button" value="=" class="botao-comando"id="total">
         </div>
         <div class="botoes-opcao">
-            <input type="button" value="÷" class="botao-comando">
-            <input type="button" value="x" class="botao-comando">
-            <input type="button" value="−" class="botao-comando">
+            <input type="button" value="÷" class="botao-comando" id="divi">
+            <input type="button" value="x" class="botao-comando" id="multi">
+            <input type="button" value="−" class="botao-comando" id="subtrair">
             <input type="button" value="+" class="botao-comando"  id="somar">
             
         </div>
@@ -39,14 +39,20 @@
     </div>
     <script>
        var n1 = '';
-       var n1int  = []
+       var n1int;
        var n2 = '';
-       var n2int = []
+       var n2int;
        var qual = 1
-        var operacao;
+       
+        var operacao = '';
 
         document.getElementById('1').addEventListener('click',function(){
-           
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
             if (qual == 1){ 
                 n1 = n1+'1'
                 document.getElementById('iresultado').value =  n1
@@ -56,8 +62,29 @@
                 document.getElementById('iresultado').value =  n2
             }
         })
+        document.getElementById('0').addEventListener('click',function(){
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
+           if (qual == 1){ 
+               n1 = n1+'0'
+               document.getElementById('iresultado').value =  n1
+           }
+           else{
+                n2 = n2+'0'
+               document.getElementById('iresultado').value =  n2
+           }
+       })
         document.getElementById('2').addEventListener('click',function(){
-            
+            if (operacao == ''){
+                qual = 1;
+            }
+            else{
+                qual = 2;
+            }
             if (qual == 1){
                 n1 = n1+'2'
                 document.getElementById('iresultado').value =  n1
@@ -69,14 +96,89 @@
         })
         //função de somar
         document.getElementById('somar').addEventListener('click',function(){
-            n1int.push(Number(n1))
-            n2int.push(Number(n2))
+            if (qual <2){
+                n1int = Number(n1)
+            }
             n1 = ''
             n2 = ''
             qual = 2
-            document.getElementById('iresultado').value =  ''
-            console.log("primeiro = "+ n1int[n1int.length-1])
-            console.log("segundo = "+ n2int[n2int.length-1])
+            
+            operacao = '+'
+        })
+        //subtrair
+        document.getElementById('subtrair').addEventListener('click',function(){
+            if (qual <2){
+                n1int = Number(n1)
+            }
+            n1 = ''
+            n2 = ''
+            qual = 2
+            
+            operacao = '-'
+        })
+        //multiplicar
+        document.getElementById('multi').addEventListener('click',function(){
+            if (qual <2){
+                n1int = Number(n1)
+            }
+            n1 = ''
+            n2 = ''
+            qual = 2
+            
+            operacao = 'x'
+        })
+        //dividir
+        document.getElementById('divi').addEventListener('click',function(){
+            if (qual <2){
+                n1int = Number(n1)
+            }
+            n1 = ''
+            n2 = ''
+            qual = 2
+            
+            operacao = '/'
+        })
+        //porcentagem
+        document.getElementById('porcen').addEventListener('click',function(){
+            if (qual <2){
+                n1int = Number(n1)
+            }
+            n1 = ''
+            n2 = ''
+            qual = 2
+            
+            operacao = '%'
+        })
+        //verificar resultado
+        document.getElementById('total').addEventListener('click',function(){
+            if (operacao == '+'){
+               n2int = Number(n2)
+            n1int = n1int+n2int
+            console.log(n1int)
+            console.log(n2int)
+            }
+            if (operacao == '-'){
+                n2int = Number(n2)
+                n1int = n1int-n2int
+                console.log(n1int)
+            }
+            if (operacao == 'x'){
+                n2int = Number(n2)
+                n1int = n1int*n2int
+                console.log(n1int)
+            }
+            if (operacao == '/'){
+                n2int = Number(n2)
+                n1int = n1int/n2int
+                console.log(n1int)
+            }
+            if (operacao == '%'){
+                n2int = Number(n2)
+                n1int = (n2int*n1int)/100
+                console.log(n1int)
+            }
+            document.getElementById('iresultado').value = n1int 
+            operacao = ''
         })
         
     </script>
