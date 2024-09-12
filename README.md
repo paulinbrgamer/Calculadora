@@ -1,1 +1,1 @@
-visite pelo link: https://paulinbrgamer.github.io/Calculadora-foda/
+Calculadora feita usando HTML css e javascript
